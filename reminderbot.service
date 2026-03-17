@@ -1,0 +1,15 @@
+[Unit]
+Description=NeurIPS Reminder Bot
+After=network.target
+
+[Service]
+Type=simple
+User=neel
+WorkingDirectory=/home/neel/ReminderBot
+ExecStart=/home/neel/ReminderBot/venv/bin/python bot.py
+Restart=on-failure
+RestartSec=10
+EnvironmentFile=/home/neel/ReminderBot/.env
+
+[Install]
+WantedBy=multi-user.target
